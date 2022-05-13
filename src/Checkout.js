@@ -1,8 +1,11 @@
 import React from 'react';
+import './Checkout.css';
 import Header from './Header';
 
-function Checkout() {
 
+/*rfce shoutcut*/
+
+function Checkout() {
   return (
     <div className="header_checkout">
       {<Header />}
@@ -14,12 +17,15 @@ function Checkout() {
             alt='ad'
           />
           <div>
-            <h2 className='checkout_title'> Your shopping basket</h2>
+            <h2 className='checkout_title'>Your shopping basket is empty</h2>
+            <p className='checkout_info'>
+              You have no items in your basket. To buy one or more items, click
+              "Add to basket" next to the item.
+            </p>
           </div>
         </div>
       </div>
     </div>
-
   );
 }
 

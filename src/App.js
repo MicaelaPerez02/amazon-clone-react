@@ -9,17 +9,15 @@ import { useEffect } from 'react';
 import { useStateValue } from './StateProvider';
 
 function App() {
-  const [dispatch] = useStateValue();
+  const [{basket}, dispatch]  = useStateValue();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
-
       if (authUser) {
         dispatch({
           type: 'SET_USER',
           user: authUser,
         });
-
       } else {
         dispatch({
           type: 'SET_USER',
@@ -30,19 +28,18 @@ function App() {
 
     return () => {
       unsubscribe();
-    }
+    };
+  }, [dispatch]);
 
-  }, []);
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={< Home />} />
+          <Route path="/login" element={< Login />} />
+          <Route path="/checkout" element={< Checkout />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  };
 
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={< Home />} />
-        <Route path="/login" element={< Login />} />
-        <Route path="/checkout" element={< Checkout />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
-
-export default App;
+  export default App;

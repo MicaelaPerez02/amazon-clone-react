@@ -1,10 +1,10 @@
 
 export const initialState = {
-    basket: [],
+    basket: [{}],
     user: null,
 };
 
-const reducer = (state, action) => {
+const reducer = (state=initialState, action) => {
     switch (action.type) {
         case 'SET_USER':
             return {

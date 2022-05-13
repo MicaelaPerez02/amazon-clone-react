@@ -3,7 +3,7 @@ import "./Header.css";
 import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import { BsFillBasket3Fill } from 'react-icons/bs';
-import {useStateValue} from './StateProvider';
+import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
  
 function Header() {
@@ -26,7 +26,7 @@ function Header() {
                 </div>
 
                 <div className='header_nav'>
-                    <Link to={!user && '/login'} className='header_link'>
+                    <Link to={/*!user && */'/login'} className='header_link'>
                         <div onClick={login} className='header_option'>
                             <span className='header_op1'> Hello {user?.email}</span>
                             <span className='header_op2'>{user? 'Sing out' : 'Sing in'}</span>
