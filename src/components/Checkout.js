@@ -1,11 +1,11 @@
 import React from 'react';
-import './Checkout.css';
+import '../components/styles/Checkout.css';
 import Header from './Header';
 
 
 /*rfce shoutcut*/
 
-function Checkout() {
+const Checkout = () => {
   return (
     <div className="header_checkout">
       {<Header />}

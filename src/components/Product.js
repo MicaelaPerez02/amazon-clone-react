@@ -1,5 +1,5 @@
 import React from 'react';
-import './Product.css';
+import '../components/styles/Product.css';
 /*rfce shoutcut*/
 
 function Product({ id, title, image, price, rating }) {

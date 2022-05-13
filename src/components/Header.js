@@ -1,12 +1,12 @@
 import React from 'react';
-import "./Header.css";
+import '../components/styles/Header.css';
 import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import { BsFillBasket3Fill } from 'react-icons/bs';
-import { useStateValue } from './StateProvider';
-import { auth } from './firebase';
+import { useStateValue } from '../StateProvider';
+import { auth } from '../firebase';
  
-function Header() {
+const Header = () => {
     const [{user}] = useStateValue();
     const login = () => {
         auth.signOut();

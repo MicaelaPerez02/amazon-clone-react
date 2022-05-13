@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import Login from './Login';
-import Checkout from './Checkout';
+import Home from './components/Home';
+import Login from './components/login/Login';
+import Checkout from './components/Checkout';
 import './App.css';
 import { auth } from './firebase';
 import { useEffect } from 'react';
